@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "517639880708",
+    "project_id": "csa-academy-af886",
+    "storage_bucket": "csa-academy-af886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517639880708:android:5e326bac2b7d14e9d93551",
+        "android_client_info": {
+          "package_name": "com.csa.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCutG8PENML6Hz6GUhZrsZGPus2LO_UbOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517639880708:android:6c552357b8a3edcbd93551",
+        "android_client_info": {
+          "package_name": "com.csacademy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCutG8PENML6Hz6GUhZrsZGPus2LO_UbOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
