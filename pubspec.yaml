@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -31,32 +31,60 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   # UI
   flutter_screenutil: ^5.9.0
+  # for page indicator
+  smooth_page_indicator: ^1.1.0
   # State management
-  flutter_bloc: ^8.1.3
-  # Code generator (mainly used with cubit & retrofit)
-  freezed: ^2.4.5
-  freezed_annotation: ^2.4.1
-  # for dependency injection
-  get_it: ^7.6.4
+  flutter_bloc: ^8.1.5
   # Automatically generate code for converting to and from JSON by annotating Dart classes
-  json_serializable: ^6.7.1
-  json_annotation: ^4.8.1
+  # json_serializable: ^6.7.1
+  # json_annotation: ^4.8.1
   # Networking
   dio: ^5.3.3
-  retrofit: ^4.0.3
-  retrofit_generator: ^8.0.4
-  pretty_dio_logger: ^1.3.1
   # localization
   intl: ^0.18.1
-  easy_localization: ^3.0.3
+  # easy_localization: ^3.0.3
   # for splash screen
   flutter_native_splash: ^2.3.5
+  # for phone number input
+  intl_phone_number_input: ^0.7.0+2
+  # for svg images
+  flutter_svg: ^2.0.9
+  # for carousel slider
+  carousel_slider: ^4.2.1
+  # for http requests
+  http: ^0.13.4
+  # for animations
+  lottie: ^3.0.0
+  # for animations set
+  simple_ripple_animation: ^0.0.9
+  # for external links
+  url_launcher: ^6.0.9
+  # for firebase auth
+  firebase_auth: ^4.17.8
+  # for firebase core
+  firebase_core: ^2.27.0
+  # for firebase messaging
+  firebase_messaging: ^14.5.0
+  # for local notifications
+  flutter_local_notifications: ^17.0.0
+  # for pincode fields
+  pin_code_fields: ^8.0.1
+  # for shared preferences
+  shared_preferences: ^2.2.2
+  # for secure storage
+  flutter_secure_storage: ^9.0.0
+  # for jwt decoder
+  jwt_decoder: ^2.0.1
+
+  rename: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -71,7 +99,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -81,16 +108,15 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animated/
+    - assets/splash/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -110,3 +136,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
