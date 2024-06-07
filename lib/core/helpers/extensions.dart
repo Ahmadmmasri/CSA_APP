@@ -44,3 +44,7 @@ extension Navigation on BuildContext {
   /// The function "pop" is used to navigate back to the previous screen.
   void pop() => Navigator.of(this).pop();
 }
+
+extension AppLanguage on BuildContext {
+  bool get isArabic => Localizations.localeOf(this).languageCode == 'ar';
+}
