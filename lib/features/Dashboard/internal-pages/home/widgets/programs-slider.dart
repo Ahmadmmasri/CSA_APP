@@ -78,7 +78,8 @@ class ProgramCard extends StatelessWidget {
         ),
         Positioned(
           top: 0,
-          left: 0,
+          right: context.isArabic ? 0 : null,
+          left: context.isArabic ? null : 0,
           child: Container(
             width: 124.w,
             height: 33.h,
@@ -87,9 +88,19 @@ class ProgramCard extends StatelessWidget {
               color: program.bannerColor!.isNotEmpty
                   ? ColorConverter.hexToColor(program.bannerColor!)
                   : ColorsManager.primary,
-              borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(10),
-                topLeft: Radius.circular(10),
+              borderRadius: BorderRadius.only(
+                bottomRight: context.isArabic
+                    ? const Radius.circular(0)
+                    : const Radius.circular(10),
+                topLeft: context.isArabic
+                    ? const Radius.circular(0)
+                    : const Radius.circular(10),
+                bottomLeft: context.isArabic
+                    ? const Radius.circular(10)
+                    : const Radius.circular(0),
+                topRight: context.isArabic
+                    ? const Radius.circular(10)
+                    : const Radius.circular(0),
               ),
             ),
             padding: const EdgeInsets.all(0),

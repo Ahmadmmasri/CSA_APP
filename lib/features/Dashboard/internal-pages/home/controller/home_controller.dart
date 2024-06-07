@@ -142,9 +142,9 @@ class HomeController {
           await dio.get(ApiConstants.baseUrl + ApiConstants.getProducts);
       if (response.statusCode == 200) {
         List products = [...response.data["data"]];
-        int index = 0;
         List<Product> productsList = products
             .map((e) {
+              int index = 0;
               var branchId = e['branch_ids'][index];
               List<BranchAcademy> branchIds = [];
               if (e['branch_ids'][index]['id'] != false &&

@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:csa_app/core/helpers/extensions.dart';
 import 'package:csa_app/core/helpers/spacing.dart';
 import 'package:csa_app/core/theming/colors.dart';
 import 'package:csa_app/core/theming/font-weight-helper.dart';
@@ -73,16 +74,27 @@ class ShopCard extends StatelessWidget {
             ),
             Positioned(
               top: 0,
-              left: 0,
+              right: context.isArabic ? 0 : null,
+              left: context.isArabic ? null : 0,
               child: Container(
                 width: 80.w,
                 height: 28.h,
                 alignment: Alignment.center,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.orange,
                   borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(10),
-                    topLeft: Radius.circular(10),
+                    bottomRight: context.isArabic
+                        ? const Radius.circular(0)
+                        : const Radius.circular(10),
+                    topLeft: context.isArabic
+                        ? const Radius.circular(0)
+                        : const Radius.circular(10),
+                    bottomLeft: context.isArabic
+                        ? const Radius.circular(10)
+                        : const Radius.circular(0),
+                    topRight: context.isArabic
+                        ? const Radius.circular(10)
+                        : const Radius.circular(0),
                   ),
                 ),
                 padding: const EdgeInsets.all(0),
@@ -97,7 +109,7 @@ class ShopCard extends StatelessWidget {
               left: 0,
               child: Container(
                 width: MediaQuery.of(context).size.width / 2.2,
-                height: 65.h,
+                // height: 65.h,
                 color: ColorsManager.white,
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(0),
@@ -105,22 +117,39 @@ class ShopCard extends StatelessWidget {
                   child: Column(
                     children: [
                       verticalSpace(5),
-                      Text(
-                        productItem.name,
-                        style: TextStyles.font14WhiteBoldWeight.copyWith(
-                          color: ColorsManager.black,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(
+                          productItem.name,
+                          style: TextStyles.font12BoldWeight.copyWith(
+                            color: ColorsManager.black,
+                          ),
                         ),
                       ),
                       verticalSpace(5),
-                      Column(
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: productItem.availableBranchs!
-                            .map((e) => Text(
-                                  e.name,
-                                  style:
-                                      TextStyles.font14RegularWeight.copyWith(
-                                    color: ColorsManager.primarytinyLight,
-                                    fontWeight: FontWeightHelper.medium,
+                            .map((e) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: Wrap(
+                                    crossAxisAlignment:
+                                        WrapCrossAlignment.start,
+                                    alignment: WrapAlignment.center,
+                                    spacing: 5.0,
+                                    runSpacing: 5.0,
+                                    children: [
+                                      Text(
+                                        e.name,
+                                        style: TextStyles.font12MediumWeight
+                                            .copyWith(
+                                          color: ColorsManager.primarytinyLight,
+                                          fontWeight: FontWeightHelper.medium,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ))
                             .toList(),
