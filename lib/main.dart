@@ -16,7 +16,7 @@ void main() async {
   await FirebaseMessaging.instance.requestPermission();
 
   // Retrieve APNS token
-  String? apnsToken = await FirebaseMessaging.instance.getAPNSToken();
+  await FirebaseMessaging.instance.getAPNSToken();
 
   // Set preferred orientations
   SystemChrome.setPreferredOrientations([
