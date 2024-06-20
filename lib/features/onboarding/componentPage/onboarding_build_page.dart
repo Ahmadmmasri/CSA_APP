@@ -38,8 +38,11 @@ class OnBoardingBuildPage extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
+          SizedBox(
+            height: 10.h,
+          ),
           Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
               description,
               style: TextStyles.font14BlackRegularWeight

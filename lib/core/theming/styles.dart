@@ -11,7 +11,7 @@ class TextStyles {
   );
 
   static TextStyle font30And500Weight = TextStyle(
-    fontSize: 30.sp,
+    fontSize: 25.sp,
     fontWeight: FontWeightHelper.medium,
   );
 
