@@ -200,6 +200,16 @@ class S {
     );
   }
 
+  /// `Cancel`
+  String get otpScreenCancelButton {
+    return Intl.message(
+      'Cancel',
+      name: 'otpScreenCancelButton',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Invalid or Unregistered \n Mobile Number`
   String get failLoginDialogTitle {
     return Intl.message(
@@ -620,10 +630,30 @@ class S {
     );
   }
 
-  /// `Join request sent successfully ✅`
+  /// `No Available Courses Currently`
+  String get noCoursesBookMessage {
+    return Intl.message(
+      'No Available Courses Currently',
+      name: 'noCoursesBookMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Course`
+  String get selectCourseMessage {
+    return Intl.message(
+      'Select Course',
+      name: 'selectCourseMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join request sent successfully`
   String get successBookMessage {
     return Intl.message(
-      'Join request sent successfully ✅',
+      'Join request sent successfully',
       name: 'successBookMessage',
       desc: '',
       args: [],

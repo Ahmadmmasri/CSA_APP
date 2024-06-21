@@ -75,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "mobileNumberTitle":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم الهاتف"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "noCoursesBookMessage":
+            MessageLookupByLibrary.simpleMessage("لا يوجد دورات متاحة حاليا"),
         "noData":
             MessageLookupByLibrary.simpleMessage("لا يوجد بيانات متاحة حاليا"),
         "noLevelDetails":
@@ -98,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "استخدم نظام التقييم في CSA لتحديد الأهداف لنفسك أو لطفلك وتتبع التقدم. من خلال التحديثات المنتظمة والملاحظات من مدربينا، يمكنك البقاء على قمة لعبة السباحة الخاصة بك والتقدم بثبات نحو أهدافك."),
         "onBoardingTwoTitle":
             MessageLookupByLibrary.simpleMessage("حدد الأهداف، وقيّم التقدم"),
+        "otpScreenCancelButton": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "otpScreenSendButton": MessageLookupByLibrary.simpleMessage("تحقق"),
         "otpScreenTitle":
             MessageLookupByLibrary.simpleMessage("التحقق من رقم هاتفك"),
@@ -126,6 +129,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "programs": MessageLookupByLibrary.simpleMessage("البرامج"),
         "resendOTPButton":
             MessageLookupByLibrary.simpleMessage(" إرسال رمز تحقق أخر"),
+        "selectCourseMessage":
+            MessageLookupByLibrary.simpleMessage("إختر دورة"),
         "shop": MessageLookupByLibrary.simpleMessage("المتجر"),
         "shopNote":
             MessageLookupByLibrary.simpleMessage("يتم بيعه فقط في الأكاديمية "),

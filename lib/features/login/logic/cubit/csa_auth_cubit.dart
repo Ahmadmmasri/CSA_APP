@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:csa_app/core/networking/api-constants.dart';
 import 'package:csa_app/core/utility/shared_prefrences.dart';
 import 'package:csa_app/features/login/data/user-children.dart';
@@ -12,9 +14,27 @@ part 'csa_auth_state.dart';
 class CsaAuthCubit extends Cubit<CsaAuthState> {
   late String verificationId;
   var resendToken;
+  late StreamSubscription<User?> authStateChangesSubscription;
 
-  CsaAuthCubit() : super(PhoneAuthInitial());
+  // CsaAuthCubit() : super(PhoneAuthInitial());
   //CsaAuthCubit() : super(NewNotification(count: 0));
+
+  CsaAuthCubit() : super(PhoneAuthInitial()) {
+    // Listen to authentication state changes
+    authStateChangesSubscription =
+        FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        // User is signed in
+        emit(PhoneOtpVerfied());
+      }
+    });
+  }
+
+  @override
+  Future<void> close() {
+    authStateChangesSubscription.cancel();
+    return super.close();
+  }
 
   Future<void> submitPhoneNumber(String phoneNumber) async {
     emit(PhoneAuthLoading());
@@ -51,10 +71,18 @@ class CsaAuthCubit extends Cubit<CsaAuthState> {
   }
 
   Future<void> submitOtp(String otpCode) async {
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationId, smsCode: otpCode);
-
-    await signIn(credential);
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+          verificationId: verificationId, smsCode: otpCode);
+      await signIn(credential);
+    } catch (e) {
+      if (e is FirebaseAuthException && e.code == 'session-expired') {
+        emit(ErrorOccurred(
+            error: 'The SMS code has expired. Please request a new one.'));
+      } else {
+        emit(ErrorOccurred(error: e.toString()));
+      }
+    }
   }
 
   Future<void> signIn(PhoneAuthCredential credential) async {

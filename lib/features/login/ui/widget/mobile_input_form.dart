@@ -84,7 +84,7 @@ class _MobileInputFormState extends State<MobileInputForm> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     String? phoneValidator(value) {
-      if (value!.length < 11) {
+      if (value!.length == 0) {
         return S.of(context).invalidNumberTitle;
       }
       return null;
@@ -104,10 +104,10 @@ class _MobileInputFormState extends State<MobileInputForm> {
                   inputValue = number.phoneNumber.toString();
                 },
                 onInputValidated: (bool value) {
-                  debugPrint(value.toString());
+                  // debugPrint(value.toString());
                 },
                 validator: phoneValidator,
-                initialValue: PhoneNumber(isoCode: 'JO'),
+                initialValue: PhoneNumber(isoCode: initialCountry),
                 ignoreBlank: false,
                 autoValidateMode: AutovalidateMode.onUserInteraction,
                 spaceBetweenSelectorAndTextField: 20,
@@ -124,7 +124,7 @@ class _MobileInputFormState extends State<MobileInputForm> {
                 ),
                 textFieldController: controller,
                 formatInput: true,
-                maxLength: 11,
+                maxLength: 16,
                 cursorColor: ColorsManager.primary,
                 textStyle: TextStyle(
                   color: ColorsManager.primary.withOpacity(0.8),
@@ -149,6 +149,7 @@ class _MobileInputFormState extends State<MobileInputForm> {
                 onSaved: (PhoneNumber number) {
                   // debugPrint('On Saved: $number');
                 },
+                locale: "en",
               ),
             ),
             // Stack(children: [

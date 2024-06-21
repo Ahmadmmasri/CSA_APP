@@ -117,7 +117,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                     DropdownButton<Course>(
                                       isExpanded: true,
                                       borderRadius: BorderRadius.circular(10),
-                                      hint: const Text('Select Course'),
+                                      hint: widget.fetchCourses!.isEmpty
+                                          ? Text(
+                                              S
+                                                  .of(context)
+                                                  .noCoursesBookMessage,
+                                              style: TextStyles.font12BoldWeight
+                                                  .copyWith(
+                                                color: ColorsManager.orange,
+                                              ))
+                                          : Text(
+                                              S.of(context).selectCourseMessage,
+                                              style: TextStyles.font12BoldWeight
+                                                  .copyWith(
+                                                color: ColorsManager.primary,
+                                              ),
+                                            ),
                                       value: selectedCourse,
                                       items: widget.fetchCourses!
                                           .where((element) =>
@@ -168,7 +183,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                         }
                                       },
-                                      backgroundColor: ColorsManager.blue,
+                                      backgroundColor: childIds.isEmpty ||
+                                              selectedCourse == null
+                                          ? Colors.grey
+                                          : ColorsManager.blue,
                                       borderRadius: 8,
                                       buttonHeight: 50.h,
                                     ),
@@ -235,7 +253,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     buttonText: S.of(context).bookCourse,
                     backgroundColor: const Color(0xff0084FF),
                     borderRadius: 8,
-                    buttonHeight: 50.h,
                     onPressed: () async {
                       showBottomSheet(context);
                     },

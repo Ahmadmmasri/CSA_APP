@@ -76,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "mobileNumberTitle":
             MessageLookupByLibrary.simpleMessage("Enter Mobile Number"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
+        "noCoursesBookMessage": MessageLookupByLibrary.simpleMessage(
+            "No Available Courses Currently"),
         "noData": MessageLookupByLibrary.simpleMessage(
             "The results are not yet available."),
         "noLevelDetails":
@@ -99,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Use CSA’s evaluation system to set goals for yourself or your child and track progress. With regular updates and feedback from our coaches, you can stay on top of your swimming game and steadily progress towards your goals."),
         "onBoardingTwoTitle": MessageLookupByLibrary.simpleMessage(
             "Set Goals, \n Measure Progress"),
+        "otpScreenCancelButton": MessageLookupByLibrary.simpleMessage("Cancel"),
         "otpScreenSendButton":
             MessageLookupByLibrary.simpleMessage("Send Verification"),
         "otpScreenTitle":
@@ -128,11 +131,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "programs": MessageLookupByLibrary.simpleMessage("Programs"),
         "resendOTPButton":
             MessageLookupByLibrary.simpleMessage("Resend Verification Code"),
+        "selectCourseMessage":
+            MessageLookupByLibrary.simpleMessage("Select Course"),
         "shop": MessageLookupByLibrary.simpleMessage("Shop"),
         "shopNote": MessageLookupByLibrary.simpleMessage(
             "Only sold at the CSA Academy"),
         "successBookMessage": MessageLookupByLibrary.simpleMessage(
-            "Join request sent successfully ✅"),
+            "Join request sent successfully"),
         "terms": MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All")
       };

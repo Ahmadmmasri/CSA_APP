@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{}
-=======
 {
     "onBoardingOneTitle" : "Dive into the \n Champion's World",
     "onBoardingOneContent" : "Learn from experienced coaches and join a community of passionate swimmers. CSA offers comprehensive training programs that cater to swimmers of all levels, from beginners to professionals.",
@@ -17,6 +14,7 @@
     "invalidNumberTitle" : "Invalid phone number",
     "otpScreenTitle" : "Verify Your Mobile Number",
     "otpScreenSendButton" : "Send Verification",
+    "otpScreenCancelButton" : "Cancel",
     "failLoginDialogTitle" : "Invalid or Unregistered \n Mobile Number",
     "failLoginDialogDetail" : "Sorry, the mobile number you entered is not valid or is not registered in our system. Please check and try again.",
     "okButton" : "OK",
@@ -59,7 +57,9 @@
     "Confirmbook" : "Confirm",
     "pointSystemHeader" : "Point System",
     "evaluationSystemHeader" : "Final Expectations Level ",
-    "successBookMessage" :"Join request sent successfully ✅",
+    "noCoursesBookMessage" :"No Available Courses Currently",
+    "selectCourseMessage" :"Select Course",
+    "successBookMessage" :"Join request sent successfully",
     "failBookMessage" :"Sorry, we couldn’t book your course.",
     "pointEvalutionOneTitle" :"1. Below Average",
     "pointEvalutionOneDesc" :"Attempts to demonstrate but does not show the proper technique.",
@@ -78,4 +78,4 @@
 
     
 }
->>>>>>> 759a5a47ec0faf045655911a0e189d9992faeae5
+

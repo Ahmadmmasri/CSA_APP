@@ -33,7 +33,7 @@ class OnBoardingBuildPage extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyles.font30And500Weight.copyWith(
+            style: TextStyles.font25And500Weight.copyWith(
               color: titleColor,
             ),
             textAlign: TextAlign.center,

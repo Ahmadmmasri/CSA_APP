@@ -10,7 +10,7 @@ class TextStyles {
     color: ColorsManager.black,
   );
 
-  static TextStyle font30And500Weight = TextStyle(
+  static TextStyle font25And500Weight = TextStyle(
     fontSize: 25.sp,
     fontWeight: FontWeightHelper.medium,
   );
