@@ -23,34 +23,30 @@ class HeaderSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Text(
-              title,
-              style: TextStyles.font18BoldWeight
-                  .copyWith(color: ColorsManager.primary),
-            ),
-            note != null
-                ? Padding(
-                    padding: EdgeInsets.only(
-                        left: context.isArabic ? 0 : 8,
-                        right: context.isArabic ? 8 : 0),
-                    child: Text(
-                      note!,
-                      style: TextStyles.font12RegularWeight.copyWith(
-                        color: ColorsManager.orange,
-                      ),
-                    ),
-                  )
-                : const SizedBox.shrink(),
-          ],
+        Text(
+          title,
+          style: TextStyles.font14WhiteBoldWeight
+              .copyWith(color: ColorsManager.primary),
         ),
+        note != null
+            ? Padding(
+                padding: EdgeInsets.only(
+                    left: context.isArabic ? 0 : 8,
+                    right: context.isArabic ? 8 : 0),
+                child: Text(
+                  note!,
+                  style: TextStyles.font10MediumWeight.copyWith(
+                    color: ColorsManager.orange,
+                  ),
+                ),
+              )
+            : const SizedBox.shrink(),
         if (!hideViewAll)
           TextButton(
             onPressed: onTapViewAllButton,
             child: Text(
               S.of(context).viewAll,
-              style: TextStyles.font14RegularWeight.copyWith(
+              style: TextStyles.font14WhiteBoldWeight.copyWith(
                 color: ColorsManager.primary,
               ),
             ),
