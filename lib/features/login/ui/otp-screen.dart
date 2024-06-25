@@ -90,6 +90,7 @@ class _OtpScreenState extends State<OtpScreen> {
         if (state is UserAuthVerfied &&
             state is! UserLoggedOut &&
             state is! PhoneOtpEnds) {
+          _timer?.cancel();
           context.pop();
           context.pushReplacementNamed(
             Routes.dashboardScreen,

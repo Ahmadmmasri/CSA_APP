@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:csa_app/core/helpers/extensions.dart';
 import 'package:csa_app/core/routing/routes.dart';
 import 'package:csa_app/core/shared-widgets/dashboard_app_bar.dart';
@@ -88,7 +90,7 @@ class _AllMemeberScreenState extends State<AllMemeberScreen> {
                   Icons.chevron_right,
                   color: ColorsManager.primary,
                 ),
-                leading: buildMemberAvatar(""),
+                leading: buildMemberAvatar(item.img),
               ),
             );
           }
@@ -99,7 +101,7 @@ class _AllMemeberScreenState extends State<AllMemeberScreen> {
   }
 }
 
-Widget buildMemberAvatar(String avatar) {
+Widget buildMemberAvatar(Uint8List avatar) {
   return Container(
     padding: const EdgeInsets.all(3),
     decoration: const BoxDecoration(
@@ -107,13 +109,16 @@ Widget buildMemberAvatar(String avatar) {
       color:
           ColorsManager.primarytinyLight, // Adjust the border color as needed
     ),
-    child: CircleAvatar(
-      radius: 25.0,
-      backgroundImage: avatar.isEmpty
-          ? const AssetImage("assets/icons/member-default.png")
-          : NetworkImage(
+    child: ClipOval(
+      child: avatar.isEmpty
+          ? Image.asset(
+              "assets/icons/member-default.png",
+              fit: BoxFit.cover,
+            )
+          : Image.memory(
               avatar,
-            ) as ImageProvider,
+              fit: BoxFit.cover,
+            ),
     ),
   );
 }

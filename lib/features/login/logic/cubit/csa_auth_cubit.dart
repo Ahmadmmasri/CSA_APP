@@ -16,19 +16,8 @@ class CsaAuthCubit extends Cubit<CsaAuthState> {
   var resendToken;
   late StreamSubscription<User?> authStateChangesSubscription;
 
-  // CsaAuthCubit() : super(PhoneAuthInitial());
-  //CsaAuthCubit() : super(NewNotification(count: 0));
-
-  CsaAuthCubit() : super(PhoneAuthInitial()) {
-    // Listen to authentication state changes
-    authStateChangesSubscription =
-        FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user != null) {
-        // User is signed in
-        emit(PhoneOtpVerfied());
-      }
-    });
-  }
+  CsaAuthCubit() : super(PhoneAuthInitial());
+  // CsaAuthCubit() : super(NewNotification(count: 0));
 
   @override
   Future<void> close() {
@@ -41,7 +30,7 @@ class CsaAuthCubit extends Cubit<CsaAuthState> {
     FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: false);
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: phoneNumber,
-      timeout: const Duration(seconds: 60),
+      timeout: const Duration(minutes: 2),
       verificationCompleted: verificationCompleted,
       verificationFailed: verificationFailed,
       codeSent: codeSent,
@@ -50,7 +39,8 @@ class CsaAuthCubit extends Cubit<CsaAuthState> {
   }
 
   void verificationCompleted(PhoneAuthCredential credential) async {
-    await signIn(credential);
+    // Comment out this line to prevent automatic sign-in
+    // await signIn(credential);
   }
 
   void verificationFailed(FirebaseAuthException e) {

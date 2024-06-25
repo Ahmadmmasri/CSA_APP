@@ -152,30 +152,6 @@ class _MobileInputFormState extends State<MobileInputForm> {
                 locale: "en",
               ),
             ),
-            // Stack(children: [
-            // Positioned(
-            //   child: Container(
-            //     width: 104.w,
-            //     height: 48.h,
-            //     decoration: BoxDecoration(
-            //       color: ColorsManager.periwinkle,
-            //       boxShadow: [
-            //         BoxShadow(
-            //           color: Colors.grey.shade300,
-            //           blurRadius: 3,
-            //           offset: const Offset(0, 2),
-            //         )
-            //       ],
-            //       // borderRadius: BorderRadius.circular(8),
-            //       border: Border.all(color: Colors.grey.shade300),
-            //     ),
-            //     child: Container(),
-            //   ),
-            // ),
-            // Positioned(
-            //   child:
-            // ),
-            //]),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
